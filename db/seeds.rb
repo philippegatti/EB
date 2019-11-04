@@ -30,4 +30,4 @@ end
 puts 'Attendances created'
 
 
-@user= User.create(first_name: "bernard", last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "ph.gatti.thp@gmail.com",encrypted_password:"password")
+@user= User.create(first_name: "bernard", last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "bernard@yopmail.com",encrypted_password:"password")
