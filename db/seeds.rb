@@ -13,7 +13,7 @@ DatabaseCleaner.clean
 
 20.times do
 	firstname = Faker::Name.first_name
-	User.create(first_name: firstname, last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "#{firstname}@yopmail.com",encrypted_password: Faker::Address.city)
+	User.create(first_name: firstname, last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "#{firstname}@yopmail.com",encrypted_password:"password")
 end
 puts 'Users created'
 
@@ -28,3 +28,6 @@ puts 'Events created'
 	Attendance.create(user_id: User.all.sample.id, event_id: Event.all.sample.id, stripe_customer_id: SecureRandom.urlsafe_base64)
 end
 puts 'Attendances created'
+
+
+@user= User.create(first_name: "bernard", last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "ph.gatti.thp@gmail.com",encrypted_password:"password")
