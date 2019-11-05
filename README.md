@@ -1,24 +1,51 @@
 # README
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     						       EB by PG
+     						 "Events for Everybody"
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Made for Ruby 2.5.1 Rails 5.2.3
 
-Things you may want to cover:
+    PRESENTATION
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-* Ruby version
+EB gathers the best events in your city and enables you to propose new activities to the community.
+This the v1, you'll be able to see and create events. You'll soon be able to edit, comment and like the events.
 
-* System dependencies
 
-* Configuration
+	SET-UP
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+You can access to the app online : https://ebbypg.herokuapp.com/
 
-* Database creation
+else you can download it locally :
 
-* Database initialization
+$ git clone https://github.com/philippegatti/EB
 
-* How to run the test suite
+Go to the folder and run $ bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+Active the migrations and run the seed :
 
-* Deployment instructions
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
 
-* ...
+	RUNNING
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Launch your server :
+
+$ rails server
+
+(you can also use $ shotgun -p 3000 - but it appears to be slower)
+
+
+Open a browser and go to
+
+    http://localhost:3000/
+   
+
+Enjoy!
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

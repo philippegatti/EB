@@ -11,7 +11,7 @@ DatabaseCleaner.allow_remote_database_url = true
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
-User.create(first_name: "bob", last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "bernard@yopmail.com",password:"password", password:"password")
+User.create(first_name: "Loulou", last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "loulou@yopmail.com",password:"password", password:"password")
 
 puts 'User created'
 
