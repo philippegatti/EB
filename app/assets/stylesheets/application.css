@@ -15,7 +15,7 @@
  */
 
 .jumbotron {
-background-image: url(concert2.jpg);
+background-image: url('concert2.jpg');
 background-size: cover;
 height: 750px;}
 
