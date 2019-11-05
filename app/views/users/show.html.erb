@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <br/>
+                <div class="form-label-group">
+                  <%="Prénom :  #{@user.first_name}"%>
+                </div>
+                <br/>
+                <div class="form-label-group">
+                  <%="Nom :  #{@user.last_name}"%>
+                </div>
+                <br/>
+                <div class="form-label-group">
+                  <%="email :  #{@user.email}"%>
+                </div>
+                <br/>
+                <div class="form-label-group">
+                  <%="Description :  #{@user.description}"%>
+                </div>
+                <br/>
+                <div class="form-label-group">
+                  <%="Membre depuis le :  #{@user.created_at.to_date}"%>
+                </div>
+                <br/>
+                <% if @user == current_user %>
+                <a class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" <%= link_to "Editer", edit_user_registration_path%>
+                <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,11 +11,9 @@ DatabaseCleaner.allow_remote_database_url = true
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
-20.times do
-	firstname = Faker::Name.first_name
-	User.create(first_name: firstname, last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "#{firstname}@yopmail.com",encrypted_password:"password")
-end
-puts 'Users created'
+User.create(first_name: "bob", last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "bernard@yopmail.com",password:"password", password:"password")
+
+puts 'User created'
 
 
 20.times do
@@ -24,10 +22,4 @@ end
 puts 'Events created'
 
 
-20.times do
-	Attendance.create(user_id: User.all.sample.id, event_id: Event.all.sample.id, stripe_customer_id: SecureRandom.urlsafe_base64)
-end
-puts 'Attendances created'
 
-
-@user= User.create(first_name: "bernard", last_name:Faker::Name.last_name, description:Faker::Lorem.paragraph, email: "bernard@yopmail.com",encrypted_password:"password")
