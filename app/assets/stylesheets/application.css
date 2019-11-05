@@ -29,11 +29,7 @@ height: 750px;}
   min-height: 100vh;
 }
 
-.bg-image {
-  background-image: url('event.jpg');
-  background-size: cover;
-  background-position: center;
-}
+
 
 .login-heading {
   font-weight: 300;
