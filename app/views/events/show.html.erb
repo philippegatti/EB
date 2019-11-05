@@ -6,7 +6,8 @@
       <div class="col-4 mr-5">
         <h5 class="card-title"><%=@event.title%></h5>
         <p class="card-text"><%=@event.description%></p>
-        <span>Par:  </span><a class="card-text text-muted" <%= link_to "#{admin(@event).first_name} #{admin(@event).first_name}", user_path(admin(@event).id)%>
+        <span>Par:  </span><a class="card-text text-muted" <%= link_to "#{admin(@event).first_name} #{admin(@event).first_name}", user_path(admin(@event).id)%><br/><br/>
+        <a class="btn btn-danger" <%= link_to "S'inscrire", event_path(@event.id)%>
       </div>
       <div class="col-4 ml-5">
         <div class="card" style="width: 18rem;">
