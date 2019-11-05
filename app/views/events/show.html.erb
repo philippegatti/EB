@@ -8,28 +8,21 @@
             <div class="col-md-9 col-lg-8 mx-auto">
                 <br/>
                 <div class="form-label-group">
-                  <%="Prénom :  #{@user.first_name}"%>
+                  <%="Titre :  #{@event.title}"%>
                 </div>
                 <br/>
                 <div class="form-label-group">
-                  <%="Nom :  #{@user.last_name}"%>
+                  <%="Organisateur :  #{admin(@event).first_name} #{admin(@event).first_name}"%>
                 </div>
                 <br/>
                 <div class="form-label-group">
-                  <%="email :  #{@user.email}"%>
+                  <%="Description :  #{@event.description}"%>
                 </div>
                 <br/>
                 <div class="form-label-group">
-                  <%="Description :  #{@user.description}"%>
+                  <%="Le :  #{@event.start_date.to_date}"%>
                 </div>
                 <br/>
-                <div class="form-label-group">
-                  <%="Membre depuis le :  #{@user.created_at.to_date}"%>
-                </div>
-                <br/>
-                <% if @user == current_user %>
-                <a class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" <%= link_to "Editer", edit_user_registration_path%>
-                <%end%>
             </div>
           </div>
         </div>

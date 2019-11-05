@@ -13,7 +13,7 @@
             <p class="card-text"><%=event.description%></p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-danger">Inscris-toi!</a>
+            <a class="btn btn-danger" <%= link_to "Voir +", event_path(event.id)%>
           </div>
         </div>
       </div>
