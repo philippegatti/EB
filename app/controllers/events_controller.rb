@@ -13,4 +13,8 @@ class EventsController < ApplicationController
 		@event=Event.create(title: params[:title],price:params[:price],description:params[:description],admin_id:current_user.id,location: params[:location],start_date:params[:start_date],duration:params[:duration])
 		redirect_to event_path(@event.id) 
 	end
+	def edit
+		@event=Event.update(title: params[:title],price:params[:price],description:params[:description],admin_id:current_user.id,location: params[:location],start_date:params[:start_date],duration:params[:duration])
+		redirect_to event_path(@event.id)
+	end
 end
