@@ -1,0 +1,29 @@
+<container class="d-flex align-items-center justify-content-center" style="height: 620px">
+  <div class="row align-items-center">
+    <div class="card m-5 p-1 " style="width: 400px;" >
+      <div class="card-header bg-light text-center">
+        <%=@event.title%>
+      </div>
+      <div class="card-body">
+        <p> Pour participer à l'évènement, tu dois régler le montant demandé par l'organisateur</p> 
+        <%= form_tag event_attendance_charges_path(@event.id,current_user.id) do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+            <label class="amount">
+              <span>Montant: <%=@event.price%> euros</span>
+            </label>
+          </article>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="A month's subscription"
+                data-amount=<%="#{@event.price*100}"%>
+                data-locale="auto"></script>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</container>
