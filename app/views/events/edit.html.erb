@@ -1,0 +1,37 @@
+<br/>
+<div class="d-flex justify-content-center">
+  <div class="card m-5 p-0 align-items-center" style="width: 60rem;">
+    <div class="card-body p-0 align-items-center" style="width: 60rem;">
+      <%= form_tag url_for(action: 'update'), method: "patch" do %>
+        <input type="hidden" name="authenticity_token" value= <%= form_authenticity_token %>
+      <div class="card-header" <%= label_tag "Titre :"%> <%=text_field_tag 'title', value= @event.title%>
+      </div><br/>
+      <div class="row align-items-between p-4">
+        <div class="col-4 mr-5">
+          <div class="card-text"<%= label_tag "Description de l'évènement :"%><br/>
+            <%=text_area_tag 'description', value=@event.description%>
+          </div>
+          <br/>
+        <a class="btn btn-danger" <%= link_to "Valider les changements", edit_event_path(@event.id)%>
+        <%#= form_tag events_path(@event.id), method: "delete" do %>
+         <%#= submit_tag "Supprimer l'évènement", class: 'btn btn-info btn-submit'%>
+        <%#end%>
+        </div>
+        <div class="col-4 ml-5">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header bg-danger text-center text-light">
+              Détails de l'évenement
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> <%= label_tag "Lieu : "%><%=text_field_tag 'location', value=@event.location%></li>
+              <li class="list-group-item"> <%= label_tag "Date : "%><%=text_field_tag 'start_date', value=@event.start_date%></li>
+              <li class="list-group-item"> <%= label_tag "Durée : "%><%=text_field_tag 'duration', value=@event.duration%></li>
+              <li class="list-group-item"> <%= label_tag "Prix : "%><%=text_field_tag 'price', value=@event.price%></li>
+            </ul>
+          <%end%>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

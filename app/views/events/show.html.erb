@@ -7,7 +7,9 @@
         <h5 class="card-title"><%=@event.title%></h5>
         <p class="card-text"><%=@event.description%></p>
         <span>Par:  </span><a class="card-text text-muted" <%= link_to "#{admin(@event).first_name} #{admin(@event).first_name}", user_path(admin(@event).id)%><br/><br/>
-        <% if user_signed_in? && @event.users.ids.include?(current_user.id)%>
+        <% if user_signed_in? && @event.admin_id == current_user.id%>
+          <a class="btn btn-danger" <%= link_to "Voir mon event", event_attendances_path(@event.id)%>
+        <% elsif user_signed_in? && @event.users.ids.include?(current_user.id)%>
           <div class="text-muted font-weight-bold">Vous êtes inscrit à cet event.</div>
         <%elsif user_signed_in?%>
           <a class="btn btn-danger" <%= link_to "S'inscrire", new_event_attendance_charge_path(@event.id,current_user.id)%>

@@ -1,0 +1,50 @@
+<br/>
+<div class="d-flex justify-content-center">
+  <div class="card m-5 p-0 align-items-center" style="width: 60rem;">
+    <div class="card-body p-0 align-items-center" style="width: 60rem;">
+      <div class="card-header">
+        <p>Titre : <%=@event.title%></p>
+      </div><br/>
+      <div class="row align-items-between p-4">
+        <div class="col-4 mr-5">
+          <div class="card-text"><p>Description de l'évènement :</p>
+            <p><%=@event.description%></p>
+          </div>
+          <span>Par:  </span><a class="card-text text-muted" <%= link_to "#{admin(@event).first_name} #{admin(@event).first_name}", user_path(admin(@event).id)%><br/><br/>
+          <% if user_signed_in? && @event.users.ids.include?(current_user.id)%>
+            <div class="text-muted font-weight-bold">Vous êtes inscrit à cet event.</div>
+          <%elsif user_signed_in?%>
+            <a class="btn btn-info" <%= link_to "Modifier mon event", edit_event_path(@event.id)%>
+          <%end%>
+        </div>
+        <div class="col-4 ml-5">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header bg-danger text-center text-light">
+              Détails de l'évenement
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Lieu : <%=@event.location%></li>
+              <li class="list-group-item">Date : <%=@event.start_date.to_date%></li>
+              <li class="list-group-item">Durée : <%=@event.duration%> minutes</li>
+              <li class="list-group-item">Prix : <%=@event.price%> euros (only!)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <div class="card-body justify-content-center">
+      <div class="card" style="width: 40rem;">
+        <div class="card-header bg-danger text-center text-light">
+          Il y a <%=@event.attendances.size%> inscrit(s)
+        </div>
+        <ul class="list-group list-group-flush">
+          <%@attendees.all.each do |attendee|%>
+          <li class="list-group-item"><%=attendee.first_name%> <%=attendee.last_name%> / <%=attendee.email%></li>
+          <%end%>
+        </ul>
+      </div>
+  </div>
+</div>
